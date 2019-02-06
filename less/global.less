@@ -184,11 +184,82 @@ audio {
   background-size: contain;
 
   height: 423px;
+  position: relative;
+
+  &__title {
+    font-weight: 900;
+    text-transform: uppercase;
+    position: absolute;
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 19px;
+
+    left: calc(50% - 18px);
+    top: 183px;
+    width: 100px;
+  }
 
 
   @media (min-width: @width-lg) {
-    background-image: url("../img/hero-bg-full.png");
+    background-image: url("../img/hero-bg.png");
     height: 1272/1920 * 100vw;
+
+    &__title {
+      left: 52.5%;
+      top: 40%;
+
+      font-size: 3.125vw;
+      line-height: 1.17;
+      width: auto;
+    }
+  }
+}
+
+.hero-info {
+  text-transform: uppercase;
+  position: absolute;
+
+  top: 43px;
+  left: calc(50% - 62px);
+  width: 200px;
+
+  transform: rotate(-4deg);
+  &__text {
+    font-size: 13px;
+    //line-height: 15px;
+    line-height: 1.25;
+    font-weight: 800;
+    color: #243034;
+    margin-bottom: 10px;
+  }
+  &__note {
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  @media (min-width: @width-lg) {
+    transform: rotate(10deg);
+    left: 66%;
+    width: 380px;
+    top: 8%;
+    &__text {
+      font-size: 24px;
+    }
+    &__note {
+      font-size: 15px;
+    }
+  }
+  @media (min-width: @width-xl) {
+    //transform: rotate(10deg);
+    //left: calc(50% + 190px);
+    width: 510px;
+    &__text {
+      font-size: 32px;
+    }
+    &__note {
+      font-size: 20px;
+    }
   }
 }
 
@@ -278,6 +349,7 @@ audio {
 
   @media (min-width: @width-lg) {
     background: url("../img/country-bg.jpg") center top no-repeat;
+    //background: url("../img/rm/2.jpg") center -7px no-repeat;
     background-size: 1440px auto;
     height: 3300px*0.75;
     //background-size: ;
@@ -344,12 +416,12 @@ audio {
     &__item {
 
       &_1 {
-        max-width: 455px*0.75;
+        max-width: 330px;
       }
       &_2 {
         margin-left: auto;
         max-width: 471px*0.75;
-        margin-top: 262px*0.75;
+        margin-top: 200px;
 
         .country__title {
           padding: 0;
@@ -357,7 +429,7 @@ audio {
       }
       &_3 {
         max-width: 490px*0.75;
-        margin-top: 288px*0.75;
+        margin-top: 222px;
       }
       &_4 {
         max-width: 472px*0.75;
@@ -365,7 +437,7 @@ audio {
         margin-top: 283px*0.75;
       }
       &_5 {
-        margin-top: 310px*0.75;
+        margin-top: 237px;
         max-width: 486px*0.75;
       }
     }
@@ -379,7 +451,8 @@ audio {
       margin-bottom: 10px;
     }
     &__text {
-      font-size: 13.5px;
+      font-size: 13px;
+      line-height: 20px;
       margin-bottom: 0;
     }
   }
@@ -423,6 +496,7 @@ audio {
 
     &__text {
       font-size: 18px;
+      line-height: 27px;
     }
 
   }
@@ -692,9 +766,9 @@ audio {
       position: absolute;
       background: url("../img/macaron-2.png") no-repeat;
       background-size: contain;
-      width: 537px;
-      height: 291px;
-      right: -306px;
+      width: 537px*0.75;
+      height: 291px*0.75;
+      right: -306px*0.75;
       bottom: 0;
     }
 
@@ -703,11 +777,11 @@ audio {
       position: absolute;
       background: url("../img/macaron-1.png") no-repeat;
       background-size: contain;
-      width: 602px;
-      height: 419px;
+      width: 602px*0.75;
+      height: 419px*0.75;
 
-      left: -395px;
-      top: 136px;
+      left: -395px*0.75;
+      top: 136px*0.75;
 
     }
 
@@ -725,6 +799,18 @@ audio {
     margin-top: 364px;
     &__col {
       padding: 0 36px;
+    }
+
+    &:before {
+      width: 537px;
+      height: 291px;
+      right: -306px;
+    }
+    &:after {
+      width: 602px;
+      height: 419px;
+      left: -395px;
+      top: 136px;
     }
   }
 }
@@ -976,6 +1062,7 @@ audio {
       //transform: scale(0.98);
 
       box-shadow: 0 0 24px #090909;
+      opacity: 0.24;
     }
 
     > img {
@@ -1022,7 +1109,7 @@ audio {
     }
     &__info {
       //height: 100%;
-      height: 468px;
+      height: 468px*0.75;
       width: 100%;
       transform: translateX(40px);
       font-size: 16px;
@@ -1037,6 +1124,7 @@ audio {
 
     &__info {
       font-size: 22px;
+      height: 468px;
     }
 
     &__text {
