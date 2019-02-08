@@ -281,7 +281,6 @@ audio {
 
   transform: rotate(-4deg);
 
-
   top: 10%;
   left: 31%;
   width: 62%;
@@ -343,13 +342,33 @@ audio {
   }
 }
 
+.map-bg {
+  background: url("../img/map-bg-m.jpg") center 70px no-repeat;
+
+  @media (min-width: @width-md) {
+    background: url("../img/map-bg.jpg") center top no-repeat;
+    background-size: 1920px auto;
+    padding-top: 250px;
+    margin-top: -250px;
+  }
+
+  @media (min-width: @width-lg) {
+    padding-top: 450px;
+    margin-top: -450px;
+  }
+
+  @media (min-width: @width-xl) {
+
+  }
+}
+
 .section-about {
   text-align: center;
-
-  background: url("../img/about-bg.jpg") center bottom no-repeat;
-  background-size: 1650px auto;
-  padding-top: 55px*0.75;
-  padding-bottom: 128px*0.75;
+  //
+  //background: url("../img/about-bg.jpg") center bottom no-repeat;
+  //background-size: 1650px auto;
+  padding-top: 20px;
+  padding-bottom: 45px;
   overflow: hidden;
 
   &__subtitle {
@@ -382,6 +401,8 @@ audio {
   }
 
   @media (min-width: @width-md) {
+    padding-top: 55px*0.75;
+    padding-bottom: 128px*0.75;
 
     .section-title {
       width: 538px;
@@ -453,9 +474,10 @@ audio {
 .section-list {
   text-align: center;
   //padding-top: 5px;
+  overflow: hidden;
 
   @media (min-width: @width-lg) {
-    background: url("../img/country-bg.jpg") center top no-repeat;
+    background: url("../img/country-bg.png") center top no-repeat;
     //background: url("../img/rm/2.jpg") center -7px no-repeat;
     background-size: 1440px auto;
     height: 3300px*0.75;
@@ -528,6 +550,12 @@ audio {
     width: 778px;
 
     &__item {
+      &_1 {
+
+        .country__title {
+          padding: 0;
+        }
+      }
       &_5 {
         margin-top: -30px;
       }
