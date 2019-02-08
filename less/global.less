@@ -42,6 +42,10 @@
 
 .container {
   max-width: 290px+30;
+	
+  @media (min-width: @width-md) {
+	  max-width: 768px+30; 
+  }
   @media (min-width: @width-lg) {
     max-width: 900px+30;
   }
@@ -128,10 +132,31 @@ audio {
     transform: translateY(3px);
     box-shadow: none;
   }
+  
+  
+  @media (min-width: @width-md) {
+    width: 328px;
+    height: 77px;
+    font-size: 18px;
+    border-radius: 40px;
+    box-shadow: 0 5px 0 #f5cc10;
+    &:active {
+      transform: translateY(5px);
+      box-shadow: none;
+    }
+  }
 
-  //@media (min-width: @width-lg) {
-  //
-  //}
+  @media (min-width: @width-lg) {
+  
+    width: 246px;
+    height: 58px;
+    font-size: 13px;
+    box-shadow: 0 3px 0 #f5cc10;
+    &:active {
+      transform: translateY(5px);
+      box-shadow: none;
+    }
+  }
   @media (min-width: @width-xl) {
     width: 328px;
     height: 77px;
@@ -166,11 +191,19 @@ audio {
   width: 280px;
   max-width: 100%;
 
-  @media (min-width: @width-lg) {
+  
+  @media (min-width: @width-md) {
     font-size: 30px;
-    height: 65px;
-    padding: 16px 100px;
+    height: 67px;
+    width: auto;
+    padding: 16px 70px;
+    
   }
+//  @media (min-width: @width-lg) {
+//    font-size: 30px;
+//    height: 65px;
+//    padding: 16px 100px;
+//  }
   @media (min-width: @width-xl) {
     font-size: 40px;
     height: 86px;
@@ -200,10 +233,24 @@ audio {
     width: 100px;
   }
 
+  @media (min-width: @width-md) {
+    background: url("../img/hero-bg-tablet.png") center top no-repeat;
+    background-size: 1040px auto;
+    height: 715px;
+    
+    &__title {
+      width: 320px;
+      font-size: 32px;
+      line-height: 38px;
+      top: 243px;
+      left: calc(50% - 13px);
+    }
+  }
 
   @media (min-width: @width-lg) {
-    background-image: url("../img/hero-bg.png");
+    background: url("../img/hero-bg.png") center top no-repeat;
     height: 1272/1920 * 100vw;
+    background-size: contain;
 
     &__title {
       left: 52.5%;
@@ -236,6 +283,20 @@ audio {
   &__note {
     font-size: 11px;
     font-weight: 600;
+  }
+  
+  @media (min-width: @width-md) {
+    top: 50px;
+    left: calc(50% + 78px);
+    width: 320px;
+    transform: rotate(9deg);
+    
+    &__text {
+      font-size: 19px;
+    }
+    &__note {
+      font-size: 12px;
+    }
   }
 
   @media (min-width: @width-lg) {
@@ -298,6 +359,26 @@ audio {
     text-transform: uppercase;
 
     margin: 16px 0;
+  }
+  
+  @media (min-width: @width-md) {
+    
+    .section-title {
+      width: 538px;
+    }
+    &__subtitle {
+      font-size: 16px;
+      margin-top: 55px;
+      margin-bottom: 22px;
+    }
+    &__text {
+      font-size: 16px;
+      line-height: 27px;
+    }
+    &__price {
+      font-size: 20px;
+      margin: 24px 0 27px;
+    }
   }
 
   @media (min-width: @width-lg) {
@@ -406,6 +487,32 @@ audio {
     color: #686868;
     margin-top: 0;
     margin-bottom: 26px;
+  }
+  
+  
+  @media (min-width: @width-md) {
+    background: url("../img/country-list-bg-tablet.png") center 60px no-repeat;
+    width: 778px;
+    
+    &__item {
+      &_5 {
+        margin-top: -30px;
+      }
+    }
+    
+    &__title {
+      font-size: 20px;
+      margin-bottom: 490px;
+    }
+    &__subtitle {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    &__text {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 90px;
+    }
   }
 
   @media (min-width: @width-lg) {
@@ -519,6 +626,19 @@ audio {
     color: #2b2b2b;
     margin: 32px 0 25px;
   }
+  
+  
+  @media (min-width: @width-md) {
+    padding: 82px 0 86px;
+    
+    .section-title {
+      width: 788px;
+    }
+    &__free-places {
+      font-size: 25px;
+      margin: 48px 0 54px;
+    }
+  }
 
   @media (min-width: @width-lg) {
 
@@ -550,8 +670,15 @@ audio {
   padding: 33px 0 0px;
   background: url("../img/start-bg.png");
   background-size: auto 100%;
+  overflow: hidden;
 
 
+//  @media (min-width: @width-md) {
+//    padding: 17px 
+//  }
+  @media (min-width: @width-md) {
+    padding: 37px 0 58px;
+  }
   @media (min-width: @width-lg) {
     padding: 17px 0 75px;
   }
@@ -595,12 +722,45 @@ audio {
     font-size: 12px;
   }
 
+  @media (min-width: @width-md) {
+
+    background-image: url("../img/warranty-bg-tablet.png");
+
+    height: 454px;
+    width: 844px;
+    
+//    margin-left: -67px;
+//    margin-right: -50px;
+
+    margin-left: -55px;
+    margin-right: 0px;
+    
+    &__title {
+      font-size: 22px;
+      left: 112px;
+      top: 130px;
+      width: 175px;
+      color: #313131;
+    }
+    &__text {
+
+      width: 420px;
+      top: 170px;
+      right: 96px;
+      font-size: 20px;
+      line-height: 30px;
+
+//      width: 750px*0.75;
+//      top: 266px*0.75;
+//      right: 89px*0.75;
+//      font-size: 20px;
+    }
+  }
+  
   @media (min-width: @width-lg) {
-
     background-image: url("../img/warranty.png");
-
     height: 453px;
-    //width: auto;
+    width: auto;
     margin-left: -67px;
     margin-right: -50px;
 
@@ -609,7 +769,7 @@ audio {
       left: 160px*0.75;
       top: 209px*0.75;
       width: 175px;
-      color: #313131;
+//      color: #313131;
     }
     &__text {
       width: 750px*0.75;
@@ -618,6 +778,7 @@ audio {
       font-size: 22px;
     }
   }
+  
   @media (min-width: @width-xl) {
     height: 604px;
     &__title {
@@ -645,6 +806,12 @@ audio {
   position: relative;
   padding: 33px 0 ;
 
+  
+  @media (min-width: @width-md) {
+    background: url("../img/training-bg-tablet.png") center top no-repeat;
+    background-size: 1040px auto;
+    padding: 79px 0 115px;
+  }
 
   @media (min-width: @width-lg) {
     background: url("../img/training-bg.png") center top no-repeat;
@@ -710,6 +877,19 @@ audio {
     }
   }
 
+  
+  @media (min-width: @width-md) {
+    font-size: 18px;
+    line-height: 25px;
+    
+    
+    margin-top: 160px;
+    padding-left: 305px;
+    padding-right: 40px;
+    &__item {
+      margin-bottom: 20px;
+    }
+  }
   @media (min-width: @width-lg) {
     background: url("../img/training-list-bg.png") no-repeat;
     background-size: 100% 100%;
@@ -754,13 +934,21 @@ audio {
   margin-top: 345px;
 
 
-  &__col {
+  &__col:not(:last-child) {
     margin-bottom: 28px;
+  }
+  
+  @media (min-width: @width-md) {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 445px;
+    width: 528px;
   }
   @media (min-width: @width-lg) {
     display: flex;
     flex-wrap: wrap;
     margin-top: 364px*0.75;
+    width: 100%;
     &:before {
       content: '';
       position: absolute;
@@ -975,6 +1163,21 @@ audio {
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .section-certificate {
   text-align: center;
 
@@ -985,6 +1188,7 @@ audio {
   padding-bottom: 403px;
 
   background: url("../img/footer-bg-m.png") center bottom no-repeat;
+  overflow: hidden;
 
   .section-title {
     width: 338px;
@@ -992,6 +1196,40 @@ audio {
     padding-left: 60px;
     padding-right: 60px;
   }
+  
+  @media (min-width: @width-md) {
+    
+    background: url("../img/footer-bg-tablet.jpg") center bottom no-repeat;
+    
+//    padding-bottom: 683px;
+    
+//    padding-bottom: 505px;
+    padding-top: 111px;
+    height: 1781px;
+    
+    .section-title {
+      width: 1002px;
+      max-width: 1002px;
+      height: 86px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      padding-top: 27px;
+    }
+    
+    &:after {
+      content: '';
+      background: url("../img/nastya-2.png") center bottom no-repeat;
+      background-size: contain;
+      width: 428px;
+      height: 572px;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-93%);
+    }
+  }
+  
   @media (min-width: @width-lg) {
     background: url("../img/footer-bg.jpg") center bottom no-repeat;
     background-size: 1440px auto;
@@ -1000,19 +1238,26 @@ audio {
     height: 1360px;
 
     .section-title {
-      width: 1000px;
+      width: 1002px;
       height: 65px;
+      padding-top: 16px;
     }
+//    
+//    &:after {
+//      content: '';
+//      background: url("../img/nastya-2.png") center bottom no-repeat;
+//      background-size: contain;
+//      width: 419px;
+//      height: 587px;
+//      position: absolute;
+//      z-index: 1;
+//      bottom: 0;
+//      left: 50%;
+//      transform: translateX(-140%);
+//    }
     &:after {
-      content: '';
-      background: url("../img/nastya-2.png") center bottom no-repeat;
-      background-size: contain;
       width: 419px;
       height: 587px;
-      position: absolute;
-      z-index: 1;
-      bottom: 0;
-      left: 50%;
       transform: translateX(-140%);
     }
   }
@@ -1025,6 +1270,7 @@ audio {
     .section-title {
       width: 1335px;
       height: 86px;
+      padding-top: 18px;
     }
 
     &:after {
@@ -1093,12 +1339,13 @@ audio {
     max-width: 216px;
   }
 
-  @media (min-width: @width-lg) {
+  
+  @media (min-width: @width-md) {
 
     display: flex;
     align-items: stretch;
 
-    margin-top: 80px;
+    margin-top: 70px;
 
     &__img {
       margin-bottom: 0;
@@ -1108,17 +1355,42 @@ audio {
       max-width: 50%;
     }
     &__info {
+      
+      height: 298px;
+      width: 400px;
+      
+      //height: 100%;
+//      height: 287px;
+//      
+//      width: 100%;
+//      transform: translateX(40px);
+      font-size: 16px;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    &__text {
+      max-width: 280px;
+      margin-left: 30px;
+    }
+  }
+  
+  @media (min-width: @width-lg) {
+    &__info {
       //height: 100%;
       height: 468px*0.75;
       width: 100%;
       transform: translateX(40px);
       font-size: 16px;
+      line-height: 1.72;
       margin-bottom: 0;
     }
+    
     &__text {
       max-width: 330px;
+      margin-left: 0;
     }
   }
+  
   @media (min-width: @width-xl) {
     margin-top: 107px;
 
@@ -1143,6 +1415,7 @@ audio {
 
   //top: 450px;
   //left: calc(50% + 333px);
+  
   &__title {
     font-size: 14px;
     color: #2c2c2c;
@@ -1168,22 +1441,44 @@ audio {
       position: relative;
     }
   }
+  
+//  @media (min-width: @width-md) {
+//    
+//  }
 
-  @media (min-width: @width-lg) {
-    left: calc(50% + 233px);
-    bottom: 300px;
+  @media (min-width: @width-md) {
+    left: calc(50% + 58px);
+    
+    
     margin-left: auto;
     margin-right: 0;
 
     position: absolute;
     width: 262px;
-    height: auto;
+    height: 521px;
+    bottom: 51px;
     margin-bottom: 0;
     &__title {
       font-size: 25px;
+//      text-align: right;
+      margin-bottom: 23px;
+      text-align: center;
+    }
+//    &__widget {
+//      height: 467px;
+//    }
+  }
+  
+  @media (min-width: @width-lg) {
+    left: calc(50% + 233px);
+    bottom: 300px;
+    &__title {
+//      font-size: 25px;
       text-align: right;
+      margin-bottom: 0;
     }
   }
+  
   @media (min-width: @width-xl) {
     left: calc(50% + 333px);
   }
@@ -1209,19 +1504,40 @@ audio {
     margin-right: auto;
   }
 
-  @media (min-width: @width-lg) {
+  
+  @media (min-width: @width-md) {
 
     background: url("../img/footer-card-bg.png") no-repeat;
     background-size: contain;
+    
+    width: 642px;
+    height: 446px;
+    
+    padding: 70px 70px 0;
+//    left: calc(50% + 4px);
+    
+    position: absolute;
+    left: 50%;
+    transform: translateX(-312px);
+    bottom: 506px;
+    
+    &__text {
+      font-size: 18px;
+//      line-height: 31px;
+      margin-bottom: 22px;
+      max-width: none;
+    }
+  }
+  
+  @media (min-width: @width-lg) {
     width: 482px;
     height: 335px;
     bottom: 81px;
     padding: 50px 50px 0;
-    left: 50%;
-    transform: translateX(-52%);
-    position: absolute;
+//    position: absolute;
     &__text {
       font-size: 14px;
+//      line-height: 23px;
       margin-bottom: 22px;
       max-width: none;
     }
