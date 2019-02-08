@@ -42,9 +42,9 @@
 
 .container {
   max-width: 290px+30;
-	
+
   @media (min-width: @width-md) {
-	  max-width: 768px+30; 
+    max-width: 768px+30;
   }
   @media (min-width: @width-lg) {
     max-width: 900px+30;
@@ -132,8 +132,7 @@ audio {
     transform: translateY(3px);
     box-shadow: none;
   }
-  
-  
+
   @media (min-width: @width-md) {
     width: 328px;
     height: 77px;
@@ -147,7 +146,7 @@ audio {
   }
 
   @media (min-width: @width-lg) {
-  
+
     width: 246px;
     height: 58px;
     font-size: 13px;
@@ -189,21 +188,23 @@ audio {
   margin: 0 auto;
 
   width: 280px;
-  max-width: 100%;
+  //max-width: 100%;
 
-  
+  margin-left: 50%;
+  transform: translateX(-50%);
+
   @media (min-width: @width-md) {
     font-size: 30px;
     height: 67px;
     width: auto;
     padding: 16px 70px;
-    
+
   }
-//  @media (min-width: @width-lg) {
-//    font-size: 30px;
-//    height: 65px;
-//    padding: 16px 100px;
-//  }
+  //  @media (min-width: @width-lg) {
+  //    font-size: 30px;
+  //    height: 65px;
+  //    padding: 16px 100px;
+  //  }
   @media (min-width: @width-xl) {
     font-size: 40px;
     height: 86px;
@@ -216,8 +217,9 @@ audio {
   //background-size: auto 100%;
   background-size: contain;
 
-  height: 423px;
+  height: 423/320 * 100vw;
   position: relative;
+  overflow: hidden;
 
   &__title {
     font-weight: 900;
@@ -225,19 +227,25 @@ audio {
     position: absolute;
     margin: 0;
 
-    font-size: 15px;
-    line-height: 19px;
+    //font-size: 15px;
+    //line-height: 19px;
+    font-size: 4.7vw;
+    line-height: 1.3;
 
-    left: calc(50% - 18px);
-    top: 183px;
-    width: 100px;
+    //left: calc(50% - 18px);
+    //top: 183px;
+    //width: 100px;
+
+    width: 30%;
+    left: 44%;
+    top: 43%;
   }
 
   @media (min-width: @width-md) {
     background: url("../img/hero-bg-tablet.png") center top no-repeat;
     background-size: 1040px auto;
     height: 715px;
-    
+
     &__title {
       width: 320px;
       font-size: 32px;
@@ -267,13 +275,20 @@ audio {
   text-transform: uppercase;
   position: absolute;
 
-  top: 43px;
-  left: calc(50% - 62px);
-  width: 200px;
+  //top: 43px;
+  //left: calc(50% - 62px);
+  //width: 200px;
 
   transform: rotate(-4deg);
+
+
+  top: 10%;
+  left: 31%;
+  width: 62%;
   &__text {
-    font-size: 13px;
+
+    //font-size: 13px;
+    font-size: 4vw;
     //line-height: 15px;
     line-height: 1.25;
     font-weight: 800;
@@ -281,19 +296,21 @@ audio {
     margin-bottom: 10px;
   }
   &__note {
-    font-size: 11px;
+    //font-size: 11px;
+    font-size: 3.4vw;
     font-weight: 600;
   }
-  
+
   @media (min-width: @width-md) {
     top: 50px;
     left: calc(50% + 78px);
     width: 320px;
     transform: rotate(9deg);
-    
+
     &__text {
       font-size: 19px;
     }
+
     &__note {
       font-size: 12px;
     }
@@ -307,6 +324,7 @@ audio {
     &__text {
       font-size: 24px;
     }
+
     &__note {
       font-size: 15px;
     }
@@ -318,6 +336,7 @@ audio {
     &__text {
       font-size: 32px;
     }
+
     &__note {
       font-size: 20px;
     }
@@ -331,6 +350,7 @@ audio {
   background-size: 1650px auto;
   padding-top: 55px*0.75;
   padding-bottom: 128px*0.75;
+  overflow: hidden;
 
   &__subtitle {
     font-size: 13px;
@@ -360,21 +380,24 @@ audio {
 
     margin: 16px 0;
   }
-  
+
   @media (min-width: @width-md) {
-    
+
     .section-title {
       width: 538px;
     }
+
     &__subtitle {
       font-size: 16px;
       margin-top: 55px;
       margin-bottom: 22px;
     }
+
     &__text {
       font-size: 16px;
       line-height: 27px;
     }
+
     &__price {
       font-size: 20px;
       margin: 24px 0 27px;
@@ -389,15 +412,18 @@ audio {
     .section-title {
       width: 680px;
     }
+
     &__subtitle {
       font-size: 15px;
       margin-top: 55px*0.75;
       margin-bottom: 22px*0.75;
     }
+
     &__text {
       font-size: 15px;
       line-height: 27px;
     }
+
     &__price {
       font-size: 15px;
       margin: 24px 0 27px;
@@ -434,7 +460,6 @@ audio {
     background-size: 1440px auto;
     height: 3300px*0.75;
     //background-size: ;
-
     padding-top: 136px*0.75;
     text-align: left;
   }
@@ -455,10 +480,19 @@ audio {
   padding: 0 12px;
   //bac-s
 
-
-  &__item_2 {
-    .country__title {
-      padding: 0 50px;
+  &__item {
+    &_1 {
+      .country__title {
+        padding: 0 20px;
+      }
+    }
+    &_2 {
+      .country__title {
+        padding: 0 50px;
+      }
+    }
+    &_4 {
+      margin-bottom: 50px;
     }
   }
   &__title {
@@ -483,31 +517,32 @@ audio {
   }
   &__text {
     font-size: 12px;
-    line-height: 1.5;
+    line-height: 17px;
     color: #686868;
     margin-top: 0;
-    margin-bottom: 26px;
+    margin-bottom: 36px;
   }
-  
-  
+
   @media (min-width: @width-md) {
     background: url("../img/country-list-bg-tablet.png") center 60px no-repeat;
     width: 778px;
-    
+
     &__item {
       &_5 {
         margin-top: -30px;
       }
     }
-    
+
     &__title {
       font-size: 20px;
       margin-bottom: 490px;
     }
+
     &__subtitle {
       font-size: 18px;
       margin-bottom: 10px;
     }
+
     &__text {
       font-size: 16px;
       line-height: 24px;
@@ -553,10 +588,12 @@ audio {
       font-size: 20px;
       margin-bottom: 23px;
     }
+
     &__subtitle {
       font-size: 15px;
       margin-bottom: 10px;
     }
+
     &__text {
       font-size: 13px;
       line-height: 20px;
@@ -614,10 +651,15 @@ audio {
   position: relative;
   text-align: center;
   box-shadow: 0 0 65px 0 rgba(9, 9, 9, 0.09);
-  background: url("../img/start-bg.png");
+  background: #fff url("../img/start-bg.png") center;
   background-size: auto 100%;
 
   padding: 43px 0 58px;
+  overflow: hidden;
+
+  .section-title {
+    width: 338px;
+  }
 
   &__free-places {
     font-size: 14px;
@@ -626,14 +668,14 @@ audio {
     color: #2b2b2b;
     margin: 32px 0 25px;
   }
-  
-  
+
   @media (min-width: @width-md) {
     padding: 82px 0 86px;
-    
+
     .section-title {
       width: 788px;
     }
+
     &__free-places {
       font-size: 25px;
       margin: 48px 0 54px;
@@ -647,6 +689,7 @@ audio {
     .section-title {
       width: 750px;
     }
+
     &__free-places {
       font-size: 22px;
       margin: 49px*0.75 0 45px*0.75;
@@ -668,14 +711,15 @@ audio {
 .section-warranty {
   box-shadow: 0 0 65px 0 rgba(9, 9, 9, 0.09);
   padding: 33px 0 0px;
-  background: url("../img/start-bg.png");
+  background: #fff url("../img/start-bg.png") center;
   background-size: auto 100%;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 
-
-//  @media (min-width: @width-md) {
-//    padding: 17px 
-//  }
+  //  @media (min-width: @width-md) {
+  //    padding: 17px
+  //  }
   @media (min-width: @width-md) {
     padding: 37px 0 58px;
   }
@@ -689,7 +733,6 @@ audio {
   background: url("../img/warranty-bg-m.png") no-repeat;
   background-size: 100% 100%;
   position: relative;
-
 
   height: 241px;
   margin-left: -15px;
@@ -728,13 +771,12 @@ audio {
 
     height: 454px;
     width: 844px;
-    
-//    margin-left: -67px;
-//    margin-right: -50px;
 
+    //    margin-left: -67px;
+    //    margin-right: -50px;
     margin-left: -55px;
     margin-right: 0px;
-    
+
     &__title {
       font-size: 22px;
       left: 112px;
@@ -742,6 +784,7 @@ audio {
       width: 175px;
       color: #313131;
     }
+
     &__text {
 
       width: 420px;
@@ -750,13 +793,13 @@ audio {
       font-size: 20px;
       line-height: 30px;
 
-//      width: 750px*0.75;
-//      top: 266px*0.75;
-//      right: 89px*0.75;
-//      font-size: 20px;
+      //      width: 750px*0.75;
+      //      top: 266px*0.75;
+      //      right: 89px*0.75;
+      //      font-size: 20px;
     }
   }
-  
+
   @media (min-width: @width-lg) {
     background-image: url("../img/warranty.png");
     height: 453px;
@@ -769,16 +812,18 @@ audio {
       left: 160px*0.75;
       top: 209px*0.75;
       width: 175px;
-//      color: #313131;
+      //      color: #313131;
     }
+
     &__text {
       width: 750px*0.75;
       top: 266px*0.75;
       right: 89px*0.75;
       font-size: 22px;
+      line-height: 1.33;
     }
   }
-  
+
   @media (min-width: @width-xl) {
     height: 604px;
     &__title {
@@ -798,15 +843,14 @@ audio {
 }
 
 .section-training {
-  background: url("../img/training-bg-m.png") center top no-repeat;
+  background: #fff url("../img/training-bg-m.png") center top no-repeat;
   //background-size: 320px auto;
 
   text-align: center;
   overflow: hidden;
   position: relative;
-  padding: 33px 0 ;
+  padding: 33px 0;
 
-  
   @media (min-width: @width-md) {
     background: url("../img/training-bg-tablet.png") center top no-repeat;
     background-size: 1040px auto;
@@ -829,6 +873,7 @@ audio {
       left: 50%;
       transform: translateX(-100%);
     }
+
     .section-title {
       width: 830px*0.75;
     }
@@ -841,6 +886,7 @@ audio {
       height: 724px;
       top: 90px;
     }
+
     .section-title {
       width: 830px;
     }
@@ -877,12 +923,10 @@ audio {
     }
   }
 
-  
   @media (min-width: @width-md) {
     font-size: 18px;
     line-height: 25px;
-    
-    
+
     margin-top: 120px;
     padding-left: 305px;
     padding-right: 40px;
@@ -933,11 +977,10 @@ audio {
   position: relative;
   margin-top: 345px;
 
-
   &__col:not(:last-child) {
     margin-bottom: 28px;
   }
-  
+
   @media (min-width: @width-md) {
     margin-left: auto;
     margin-right: auto;
@@ -994,6 +1037,7 @@ audio {
       height: 291px;
       right: -306px;
     }
+
     &:after {
       width: 602px;
       height: 419px;
@@ -1113,6 +1157,29 @@ audio {
     text-transform: uppercase;
   }
 
+  @media (min-width: @width-md) {
+    font-size: 20px;
+    padding: 50px 10px 55px;
+    &__title {
+      width: 458px;
+      height: 56px;
+      margin-bottom: 25px;
+      padding-top: 16px;
+    }
+
+    &__text {
+      margin-bottom: 23px;
+      max-width: 360px;
+    }
+
+    &__timer {
+      width: 213px;
+      height: 253px;
+      padding-left: 50px;
+      padding-top: 50px;
+      line-height: 21px;
+    }
+  }
   @media (min-width: @width-lg) {
     padding: 50px 20px 55px;
 
@@ -1120,12 +1187,15 @@ audio {
       width: 458px*0.75;
       height: 56px*0.75;
     }
+
     &__price {
       margin-bottom: 12px;
     }
+
     &__btn {
       margin-top: 18px;
     }
+
     &__timer {
       width: 213px*0.75;
       height: 253px*0.75;
@@ -1135,6 +1205,7 @@ audio {
       line-height: 16px;
       //line-height: 16px;
     }
+
     &__timer-title {
       margin-bottom: 5px;
     }
@@ -1163,21 +1234,6 @@ audio {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .section-certificate {
   text-align: center;
 
@@ -1185,9 +1241,10 @@ audio {
   position: relative;
 
   padding-top: 49px;
-  padding-bottom: 403px;
+  padding-bottom: 413px;
 
-  background: url("../img/footer-bg-m.png") center bottom no-repeat;
+  background: #fff url("../img/footer-bg-m.png") center bottom no-repeat;
+  background-size: 768px auto;
   overflow: hidden;
 
   .section-title {
@@ -1196,26 +1253,25 @@ audio {
     padding-left: 60px;
     padding-right: 60px;
   }
-  
+
   @media (min-width: @width-md) {
-    
+
     background: url("../img/footer-bg-tablet.jpg") center bottom no-repeat;
-    
-//    padding-bottom: 683px;
-    
-//    padding-bottom: 505px;
+
+    //    padding-bottom: 683px;
+    //    padding-bottom: 505px;
     padding-top: 111px;
     height: 1781px;
-    
+
     .section-title {
       width: 1002px;
-      max-width: 1002px;
+      //max-width: 1002px;
       height: 86px;
       margin-left: 50%;
       transform: translateX(-50%);
       padding-top: 27px;
     }
-    
+
     &:after {
       content: '';
       background: url("../img/nastya-2.png") center bottom no-repeat;
@@ -1229,9 +1285,10 @@ audio {
       transform: translateX(-93%);
     }
   }
-  
+
   @media (min-width: @width-lg) {
     background: url("../img/footer-bg.jpg") center bottom no-repeat;
+    //background-image: url("../img/rm/6.png");
     background-size: 1440px auto;
     padding-bottom: 0;
     padding-top: 93px;
@@ -1242,19 +1299,20 @@ audio {
       height: 65px;
       padding-top: 16px;
     }
-//    
-//    &:after {
-//      content: '';
-//      background: url("../img/nastya-2.png") center bottom no-repeat;
-//      background-size: contain;
-//      width: 419px;
-//      height: 587px;
-//      position: absolute;
-//      z-index: 1;
-//      bottom: 0;
-//      left: 50%;
-//      transform: translateX(-140%);
-//    }
+
+    //
+    //    &:after {
+    //      content: '';
+    //      background: url("../img/nastya-2.png") center bottom no-repeat;
+    //      background-size: contain;
+    //      width: 419px;
+    //      height: 587px;
+    //      position: absolute;
+    //      z-index: 1;
+    //      bottom: 0;
+    //      left: 50%;
+    //      transform: translateX(-140%);
+    //    }
     &:after {
       width: 419px;
       height: 587px;
@@ -1285,7 +1343,6 @@ audio {
   //background: url("../img/certificate-small.png") no-repeat;
   //width: 597px;
   //height: 468px;
-
 
   margin-top: 27px;
   //&__col {
@@ -1339,7 +1396,6 @@ audio {
     max-width: 216px;
   }
 
-  
   @media (min-width: @width-md) {
 
     display: flex;
@@ -1350,30 +1406,33 @@ audio {
     &__img {
       margin-bottom: 0;
     }
+
     &__col {
       flex: 0 0 50%;
       max-width: 50%;
     }
+
     &__info {
-      
+
       height: 298px;
       width: 400px;
-      
+
       //height: 100%;
-//      height: 287px;
-//      
-//      width: 100%;
-//      transform: translateX(40px);
+      //      height: 287px;
+      //
+      //      width: 100%;
+      //      transform: translateX(40px);
       font-size: 16px;
       margin-bottom: 0;
       line-height: 1.5;
     }
+
     &__text {
       max-width: 280px;
-//      margin-left: 30px;
+      //      margin-left: 30px;
     }
   }
-  
+
   @media (min-width: @width-lg) {
     &__info {
       //height: 100%;
@@ -1384,13 +1443,13 @@ audio {
       line-height: 1.72;
       margin-bottom: 0;
     }
-    
+
     &__text {
       max-width: 330px;
       margin-left: 0;
     }
   }
-  
+
   @media (min-width: @width-xl) {
     margin-top: 107px;
 
@@ -1408,14 +1467,14 @@ audio {
 .social {
   //height: 467px;
   width: 208px;
-  height: 370px;
+  //height: 370px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 66px;
+  margin-bottom: 70px;
 
   //top: 450px;
   //left: calc(50% + 333px);
-  
+
   &__title {
     font-size: 14px;
     color: #2c2c2c;
@@ -1441,15 +1500,9 @@ audio {
       position: relative;
     }
   }
-  
-//  @media (min-width: @width-md) {
-//    
-//  }
-
   @media (min-width: @width-md) {
     left: calc(50% + 58px);
-    
-    
+
     margin-left: auto;
     margin-right: 0;
 
@@ -1460,36 +1513,37 @@ audio {
     margin-bottom: 0;
     &__title {
       font-size: 25px;
-//      text-align: right;
       margin-bottom: 23px;
       text-align: center;
     }
-//    &__widget {
-//      height: 467px;
-//    }
   }
-  
   @media (min-width: @width-lg) {
-    left: calc(50% + 233px);
-    bottom: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: calc(50% + 250px);
+    bottom: 308px;
+    width: 197px;
+    height: auto;
+    transform: translateY(50%);
     &__title {
-//      font-size: 25px;
       text-align: right;
-      margin-bottom: 0;
+      font-size: 19px;
     }
   }
-  
   @media (min-width: @width-xl) {
-    left: calc(50% + 333px);
+    left: calc(50% + 334px);
+    //bottom: 147px;
+    width: 262px;
+    bottom: 410px;
+    &__title {
+      font-size: 25px;
+    }
   }
 }
 
 .footer-card {
   text-align: center;
-
-
-  //margin-top: 100px;
-
   &__text {
     font-size: 12px;
     margin-bottom: 14px;
@@ -1504,40 +1558,32 @@ audio {
     margin-right: auto;
   }
 
-  
   @media (min-width: @width-md) {
-
     background: url("../img/footer-card-bg.png") no-repeat;
     background-size: contain;
-    
+
     width: 642px;
     height: 446px;
-    
+
     padding: 70px 70px 0;
-//    left: calc(50% + 4px);
-    
     position: absolute;
-    left: 50%;
-    transform: translateX(-312px);
+    left: calc(50% - 313px);
     bottom: 506px;
-    
+
     &__text {
       font-size: 18px;
-//      line-height: 31px;
       margin-bottom: 22px;
       max-width: none;
     }
   }
-  
   @media (min-width: @width-lg) {
     width: 482px;
     height: 335px;
     bottom: 81px;
+    left: calc(50% - 253px);
     padding: 50px 50px 0;
-//    position: absolute;
     &__text {
       font-size: 14px;
-//      line-height: 23px;
       margin-bottom: 22px;
       max-width: none;
     }
@@ -1545,7 +1591,8 @@ audio {
   @media (min-width: @width-xl) {
     width: 642px;
     height: 446px;
-    bottom: 108px;
+    left: calc(50% - 337px);
+    bottom: 111px;
     padding: 70px 70px 0;
     &__text {
       font-size: 18px;
