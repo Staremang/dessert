@@ -99,9 +99,6 @@ audio {
   white-space: nowrap;
 }
 
-//.red {
-//	color: #c90834;
-//}
 .btn {
   font-family: "Montserrat", sans-serif;
   display: inline-block;
@@ -170,6 +167,29 @@ audio {
   }
 }
 
+.input {
+  font-family: "Montserrat", sans-serif;
+  background: white;
+  border: 1px solid #dfdfdf;
+  border-radius: 100px;
+  text-align: center;
+  outline: none;
+  height: 62px;
+  @media (min-width: @width-md) {
+    height: 82px;
+    font-size: 18px;
+  }
+  @media (min-width: @width-lg) {
+    height: 62px;
+    font-size: 14px;
+  }
+  @media (min-width: @width-xl) {
+    height: 82px;
+    font-size: 18px;
+  }
+
+}
+
 .section-title {
   text-align: center;
 
@@ -212,6 +232,444 @@ audio {
   }
 }
 
+.popup {
+  display: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.21);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+
+  overflow: auto;
+
+  text-align: center;
+  padding: 10px 0;
+  &:before {
+    content: "";
+    display: inline-block;
+    font-size: 0;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+  }
+  &__wrapper {
+    vertical-align: middle;
+
+    //background-size: 100% 100%;
+    //background: white;
+    width: 280px;
+    height: 423px;
+    padding-top: 43px;
+    padding-left: 25px;
+    padding-right: 25px;
+    //height: 500px;
+
+    display: inline-block;
+    position: relative;
+
+    //display: flex;
+    background-image: data-uri("../img/inside/popup-bg-mobile.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:before {
+      content: '';
+
+      position: absolute;
+      width: 280px;
+      height: 452px;
+
+      background: data-uri("../img/popup-bg-mobile.png") no-repeat;
+      background-size: 100% 100%;
+
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-141px, -222px);
+    }
+  }
+  &__close {
+    background: url("../img/inside/close-icon.svg") center no-repeat;
+    background-size: contain;
+    //background-size: 29px;
+
+    width: 20px;
+    height: 20px;
+    position: absolute;
+
+    right: 15px;
+    top: 13px;
+
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: 999;
+  }
+
+  @media (min-width: @width-md) {
+    backdrop-filter: blur(20px);
+    &__close {
+      width: 29px;
+      height: 29px;
+      right: 37px;
+      top: 31px;
+    }
+
+    &__wrapper {
+      width: 758px;
+      height: 509px;
+      padding-top: 60px;
+
+      background-image: data-uri("../img/inside/popup-bg-tablet.svg");
+      //background-image: url("../img/rm/22.png");
+      &:before {
+
+        background-image: data-uri("../img/popup-bg-tablet.png");
+        transform: translate(-430px, -311px);
+        width: 860px;
+        height: 620px;
+      }
+    }
+  }
+  @media (min-width: @width-lg) {
+    &__close {
+      right: 45px;
+      top: 32px;
+    }
+
+    &__wrapper {
+      width: 800px;
+      height: 468px;
+
+      padding-top: 60px;
+      background-image: data-uri("../img/inside/popup-bg.svg");
+
+      &:before {
+
+        background-image: data-uri("../img/popup-bg.png");
+        transform: translate(-568px*0.75, -369px*0.75);
+        width: 1132px*0.75;
+        height: 736px*0.75;
+      }
+      //background-image: url("../img/rm/222.png");
+      //&:before {
+      //  width: 1027px*0.75;
+      //  height: 625px*0.75;
+      //}
+    }
+  }
+  @media (min-width: @width-xl) {
+    &__close {
+      right: 60px;
+      top: 42px;
+    }
+
+    &__wrapper {
+      width: 1027px;
+      height: 625px;
+      padding-top: 80px;
+      padding-left: 150px;
+      padding-right: 150px;
+      &:before {
+        transform: translate(-568px, -369px);
+        width: 1132px;
+        height: 736px;
+      }
+      //&:before {
+      //  width: 1027px;
+      //  height: 625px;
+      //}
+    }
+  }
+}
+
+.step-1 {
+  position: relative;
+  //background: url("../img/rm/11.png") center 5px no-repeat;
+  &__title {
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    position: relative;
+    color: #909090;
+    line-height: 1.5;
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+  &__step {
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  &__description {
+    position: relative;
+    color: #909090;
+    line-height: 1.5;
+    font-size: 14px;
+    margin-bottom: 16px;
+
+  }
+  &__input {
+    position: relative;
+    display: block;
+    margin: 0 auto 11px;
+    width: 211px;
+  }
+  &__btn {
+    width: 211px;
+  }
+
+  @media (min-width: @width-md) {
+    &:before {
+      content: '';
+      position: absolute;
+      background: url("../img/popup-step-1-cake.png") no-repeat;
+      background-size: contain;
+      width: 602px;
+      height: 467px;
+
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__title {
+      font-size: 25px;
+      margin-bottom: 11px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      margin-bottom: 22px;
+    }
+
+    &__step {
+      font-size: 25px;
+      margin-bottom: 13px;
+    }
+
+    &__description {
+      font-size: 16px;
+      margin-bottom: 23px;
+    }
+
+    &__input {
+      width: 444px;
+      margin-bottom: 26px;
+    }
+
+    &__btn {
+      width: 328px;
+    }
+  }
+  @media (min-width: @width-lg) {
+    &:before {
+      width: 628px;
+      height: 479px;
+    }
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 9px;
+    }
+
+    &__subtitle {
+      font-size: 14px;
+      margin-bottom: 19px;
+    }
+
+    &__step {
+      font-size: 22px;
+      margin-bottom: 7px;
+    }
+
+    &__description {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    &__input {
+      width: 333px;
+      //margin-bottom: 26px;
+    }
+
+    &__btn {
+      width: 246px;
+    }
+  }
+  @media (min-width: @width-xl) {
+    &:before {
+      width: 837px;
+      height: 638px;
+    }
+
+    &__title {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    &__step {
+      font-size: 30px;
+      margin-bottom: 9px;
+    }
+
+    &__description {
+      font-size: 18px;
+      margin-bottom: 27px;
+    }
+
+    &__input {
+      width: 444px;
+      margin-bottom: 35px;
+    }
+
+    &__btn {
+      width: 328px;
+    }
+  }
+}
+
+.step-2 {
+  padding-top: 87px;
+  position: relative;
+  &:before {
+    content: '';
+    background: url("../img/popup-step-2-cake-mobile.png") no-repeat;
+    background-size: contain;
+    width: 226px;
+    height: 321px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+  }
+  &__step {
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  &__description {
+    position: relative;
+    color: #909090;
+    line-height: 1.5;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  &__btn {
+    width: 211px;
+  }
+  &__bye {
+    position: relative;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 70px;
+  }
+
+  @media (min-width: @width-md) {
+    padding-top: 88px;
+    &:before {
+      background-image: url("../img/popup-step-2-cake-tablet.png");
+      width: 681px;
+      height: 532px;
+      transform: translate(-50%, -50%);
+    }
+
+    &__step {
+      font-size: 25px;
+      margin-bottom: 9px;
+    }
+
+    &__description {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    &__btn {
+      width: 328px;
+    }
+
+    &__bye {
+      font-size: 25px;
+      margin-top: 86px;
+    }
+  }
+  @media (min-width: @width-lg) {
+    padding-top: 85px;
+    &:before {
+      background-image: url("../img/popup-step-2-cake.png");
+      width: 851px*0.75;
+      height: 646px*0.75;
+      transform: translate(-45%, -50%);
+    }
+
+    &__step {
+      font-size: 22px;
+      margin-bottom: 11px;
+    }
+
+    &__description {
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    &__btn {
+      width: 246px;
+    }
+
+    &__bye {
+      font-size: 24px;
+      margin-top: 80px;
+    }
+  }
+  @media (min-width: @width-xl) {
+    padding-top: 113px;
+    &:before {
+      width: 851px;
+      height: 646px;
+      //transform: translate(-50%, -50%);
+    }
+
+    &__step {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    &__description {
+      font-size: 18px;
+      margin-bottom: 29px;
+    }
+
+    &__btn {
+      width: 328px;
+    }
+
+    &__bye {
+      font-size: 32px;
+      margin-top: 106px;
+    }
+  }
+}
+
 .section-hero {
   background: url("../img/hero-bg-m.png") center no-repeat;
   //background-size: auto 100%;
@@ -220,6 +678,23 @@ audio {
   height: 423/320 * 100vw;
   position: relative;
   overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background: url("../img/hero-badge.png") no-repeat;
+    background-size: contain;
+
+    transform: rotate(14deg);
+    width: 128/320 * 100vw;
+    height: 70/320 * 100vw;
+    //width: 338px;
+    //height: 185px;
+    //width: 10%;
+    //height: 10%;
+    top: 70%;
+    left: 47%;
+  }
 
   &__title {
     font-weight: 900;
@@ -246,6 +721,18 @@ audio {
     background-size: 1040px auto;
     height: 715px;
 
+    &:before {
+
+      transform: rotate(20deg);
+      width: 164px;
+      height: 90px;
+
+      top: 416px;
+      //left: 75%;
+      //left: 576px;
+      left: calc(50% + 192px);
+    }
+
     &__title {
       width: 320px;
       font-size: 32px;
@@ -259,6 +746,17 @@ audio {
     background: url("../img/hero-bg.png") center top no-repeat;
     height: 1272/1920 * 100vw;
     background-size: contain;
+
+    &:before {
+      transform: rotate(-20deg);
+      width: 338/1920 * 100vw;
+      height: 185/1920 * 100vw;
+      //width: 338px;
+      //height: 185px;
+
+      top: 27%;
+      left: 3%;
+    }
 
     &__title {
       left: 52.5%;
@@ -371,6 +869,12 @@ audio {
   padding-bottom: 45px;
   overflow: hidden;
 
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
   &__subtitle {
     font-size: 13px;
 
@@ -404,6 +908,34 @@ audio {
     padding-top: 55px*0.75;
     padding-bottom: 128px*0.75;
 
+    &:before {
+      content: '';
+      background: url("../img/about-macaron-2.png") center no-repeat;
+      background-size: contain;
+      height: 100%;
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+
+      left: calc(50% + 300px);
+      width: 422px;
+    }
+    &:after {
+      content: '';
+      background: url("../img/about-macaron-1.png") center no-repeat;
+      background-size: contain;
+      //height: 100%;
+      position: absolute;
+      opacity: 0.3;
+      z-index: 0;
+      transform: translateZ(0);
+
+      top: 180px;
+      height: 350px;
+      width: 557px;
+      left: calc(50% - 700px);
+    }
+
     .section-title {
       width: 538px;
     }
@@ -430,6 +962,16 @@ audio {
     padding-bottom: 128px*0.75;
     background-size: 1650px auto;
 
+    &:before {
+      left: calc(50% + 400px);
+      width: 422px;
+    }
+    &:after {
+      top: 0;
+      height: 100%;
+      width: 557px;
+      left: calc(50% - 900px);
+    }
     .section-title {
       width: 680px;
     }
@@ -455,6 +997,14 @@ audio {
     padding-top: 55px;
     padding-bottom: 128px;
 
+    &:before {
+      width: 563px;
+      left: calc(50% + 400px);
+    }
+    &:after {
+      width: 743px;
+      left: calc(50% - 1050px);
+    }
     &__subtitle {
       font-size: 20px;
       margin-top: 55px;
@@ -872,7 +1422,7 @@ audio {
 
 .section-training {
   background: #fff url("../img/training-bg-m.png") center top no-repeat;
-  //background-size: 320px auto;
+  background-size: 768px auto;
 
   text-align: center;
   overflow: hidden;
@@ -1167,11 +1717,11 @@ audio {
     width: 132px;
     height: 156px;
     position: absolute;
-    background: url("../img/timer-bg.png") no-repeat;
+    background: data-uri("../img/inside/timer-bg.svg") no-repeat;
     background-size: contain;
     right: 0;
     top: 20%;
-    transform: translateX(18%);
+    transform: translateX(17%);
 
     font-size: 12px;
     font-weight: bold;
@@ -1209,11 +1759,14 @@ audio {
     }
   }
   @media (min-width: @width-lg) {
+    font-size: 15px;
     padding: 50px 20px 55px;
 
     &__title {
+      padding-top: 13px;
       width: 458px*0.75;
       height: 56px*0.75;
+      margin-bottom: 19px;
     }
 
     &__price {
@@ -1587,7 +2140,7 @@ audio {
   }
 
   @media (min-width: @width-md) {
-    background: url("../img/footer-card-bg.png") no-repeat;
+    background: data-uri("../img/inside/footer-card-bg.svg") no-repeat;
     background-size: contain;
 
     width: 642px;

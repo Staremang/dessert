@@ -42,7 +42,7 @@
                 Японию и Китай!
             </div>
             <div class="section-about__price">Стоимость курса от <span class="orange">4990.-</span></div>
-            <button class="btn">Записаться</button>
+            <button class="btn" data-popup="#step-1">Записаться</button>
         </div>
     </div>
     <div class="section-list">
@@ -121,7 +121,7 @@
 <div class="section-start">
     <div class="section-title">Начало курса 01.03.2019</div>
     <div class="section-start__free-places">Осталось 6 / 30 мест в группе</div>
-    <button class="btn">Записаться</button>
+    <button class="btn" data-popup="#step-1">Записаться</button>
 </div>
 
 <div class="section-training">
@@ -158,7 +158,7 @@
                     </div>
                     <div class="training-card__price">Стоимость: <span class="orange">6 990.-</span></div>
                     <div class="training-card__price">Свободных мест: <span class="orange">20/20</span></div>
-                    <button class="training-card__btn btn">Записаться</button>
+                    <button class="training-card__btn btn" data-popup="#step-1">Записаться</button>
 
                 </div>
             </div>
@@ -181,12 +181,12 @@
                     <div class="training-card__price">Стоимость: <span class="cross">6 990.-</span> <span
                             class="orange">4 990.-</span></div>
                     <div class="training-card__price">Свободных мест: <span class="orange">6/30</span></div>
-                    <button class="training-card__btn btn">Записаться</button>
+                    <button class="training-card__btn btn" data-popup="#step-1">Записаться</button>
                     <div class="training-card__timer">
                         <div class="training-card__timer-title">Действует <br>еще:</div>
-                        <div class="training-card__timer-val">15 дней</div>
-                        <div class="training-card__timer-val">16 часов</div>
-                        <div class="training-card__timer-val">10 минут</div>
+                        <div class="training-card__timer-val"><span id="timer-d">0</span> дней</div>
+                        <div class="training-card__timer-val"><span id="timer-h">0</span> часов</div>
+                        <div class="training-card__timer-val"><span id="timer-m">0</span> минут</div>
                     </div>
                 </div>
             </div>
@@ -237,17 +237,38 @@
         <div class="footer-card__text">Порадуй себя и своих близких изысканными десертами со всего мира! <br>
             Начни путешествие уже сейчас!
         </div>
-        <button class="btn">начать!</button>
+        <button class="btn" data-popup="#step-1">начать!</button>
+    </div>
+</div>
+
+<div class="popup">
+    <div class="popup__wrapper">
+        <button class="popup__close" type="button"></button>
+        <div class="popup__content step-1" id="step-1">
+            <div class="step-1__title">Готовы начать? Отлично.</div>
+            <div class="step-1__subtitle">Осталось всего 2 шага: </div>
+            <div class="step-1__step">Шаг 1</div>
+            <div class="step-1__description">Укажите почту, на которую придёт ваш логин <br>
+                и пароль от личного кабинета и подробная инструкция:</div>
+            <input type="email" class="input step-1__input" placeholder="Введите ваш e-mail">
+            <button class="btn step-1__btn" data-popup="#step-2">Далее</button>
+        </div>
+        <div class="popup__content step-2" id="step-2">
+            <div class="step-2__step">Шаг 2</div>
+            <div class="step-2__description">Осталось только оплатить участие: </div>
+            <button class="btn step-2__btn">Оплатить онлайн</button>
+            <div class="step-2__bye">Успехов в обучении!</div>
+        </div>
     </div>
 </div>
 
 
-<!--<script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>-->
+<script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
 <!--<script type="text/javascript" src="libs/slick.min.js"></script>-->
 <!--<script type="text/javascript" src="libs/jquery.fancybox.min.js"></script>-->
 <!--<script type="text/javascript" src="libs/jquery.viewportchecker.min.js"></script>-->
 
-<!--<script type="text/javascript" src="js/main.js"></script>-->
+<script type="text/javascript" src="js/main.js"></script>
 
 <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
 
