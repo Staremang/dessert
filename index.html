@@ -244,15 +244,15 @@
 <div class="popup">
     <div class="popup__wrapper">
         <button class="popup__close" type="button"></button>
-        <div class="popup__content step-1" id="step-1">
+        <form class="popup__content step-1" id="step-1">
             <div class="step-1__title">Готовы начать? Отлично.</div>
             <div class="step-1__subtitle">Осталось всего 2 шага: </div>
             <div class="step-1__step">Шаг 1</div>
             <div class="step-1__description">Укажите почту, на которую придёт ваш логин <br>
                 и пароль от личного кабинета и подробная инструкция:</div>
-            <input type="email" class="input step-1__input" placeholder="Введите ваш e-mail">
-            <button class="btn step-1__btn" data-popup="#step-2">Далее</button>
-        </div>
+            <input type="email" name="email" class="input step-1__input" placeholder="Введите ваш e-mail" required>
+            <button type="submit" class="btn step-1__btn">Далее</button>
+        </form>
         <div class="popup__content step-2" id="step-2">
             <div class="step-2__step">Шаг 2</div>
             <div class="step-2__description">Осталось только оплатить участие: </div>

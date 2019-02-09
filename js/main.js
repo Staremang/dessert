@@ -31,7 +31,7 @@ function initializeClock(endtime) {
     }
 
     updateClock();
-    var timeInterval = setInterval(updateClock, 1000*60);
+    var timeInterval = setInterval(updateClock, 1000 * 60);
 }
 
 
@@ -78,17 +78,14 @@ $(document).ready(function () {
     initPopup();
 
 
-
     $('form').on('submit', function (e) {
         e.preventDefault();
 
-        var form = $(this),
+        var $form = $(this),
             data = $(this).serialize(),
             id = $(this).attr('id'),
-            submitBtn = $(this).find('button[type="submit"]'),
+            $submitBtn = $(this).find('button[type="submit"]'),
             submitBtnText = submitBtn.text();
-
-
 
 
         $.ajax({
@@ -96,37 +93,28 @@ $(document).ready(function () {
             url: '/mail.php',
             data: data,
             beforeSend: function () {
-                submitBtn.attr('disabled', '');
-                submitBtn.text('Отправка...');
+                $submitBtn.attr('disabled', '');
+                $submitBtn.text('Отправка...');
             },
             error: function (error) {
                 alert('Ошибка ' + error.status + '. Повторите позднее.');
-                submitBtn.removeAttr('disabled');
-                submitBtn.text(submitBtnText);
+                $submitBtn.removeAttr('disabled');
+                $submitBtn.text(submitBtnText);
             },
             success: function (data) {
-                submitBtn.removeAttr('disabled');
-                submitBtn.text(submitBtnText);
+                $submitBtn.removeAttr('disabled');
+                $submitBtn.text(submitBtnText);
 
                 data = JSON.parse(data);
 
-                var targetName = '';
-
                 if (data.sended) {
                     switch (id) {
-                        case 'call-me':
+                        case 'step-1':
 
-                            targetName = 'zvonok';
-                            $.fancybox.close();
-                            $.fancybox.open($('#thanks'));
+                            $('.popup__content').hide();
+                            $('#step-2').show();
+
                             break;
-
-                        case 'anketa':
-                            targetName = 'zayavka';
-                            $.fancybox.close();
-                            $.fancybox.open($('#thanks-2'));
-                            break;
-
                     }
 
                 } else {
