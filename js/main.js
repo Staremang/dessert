@@ -76,4 +76,64 @@ $(document).ready(function () {
     initializeClock(deadline);
 
     initPopup();
+
+
+
+    $('form').on('submit', function (e) {
+        e.preventDefault();
+
+        var form = $(this),
+            data = $(this).serialize(),
+            id = $(this).attr('id'),
+            submitBtn = $(this).find('button[type="submit"]'),
+            submitBtnText = submitBtn.text();
+
+
+
+
+        $.ajax({
+            type: "POST",
+            url: '/mail.php',
+            data: data,
+            beforeSend: function () {
+                submitBtn.attr('disabled', '');
+                submitBtn.text('Отправка...');
+            },
+            error: function (error) {
+                alert('Ошибка ' + error.status + '. Повторите позднее.');
+                submitBtn.removeAttr('disabled');
+                submitBtn.text(submitBtnText);
+            },
+            success: function (data) {
+                submitBtn.removeAttr('disabled');
+                submitBtn.text(submitBtnText);
+
+                data = JSON.parse(data);
+
+                var targetName = '';
+
+                if (data.sended) {
+                    switch (id) {
+                        case 'call-me':
+
+                            targetName = 'zvonok';
+                            $.fancybox.close();
+                            $.fancybox.open($('#thanks'));
+                            break;
+
+                        case 'anketa':
+                            targetName = 'zayavka';
+                            $.fancybox.close();
+                            $.fancybox.open($('#thanks-2'));
+                            break;
+
+                    }
+
+                } else {
+                    alert(data.message);
+                }
+
+            }
+        });
+    });
 });
