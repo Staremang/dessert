@@ -88,7 +88,7 @@ $(document).ready(function () {
             data = $(this).serialize(),
             id = $(this).attr('id'),
             $submitBtn = $(this).find('button[type="submit"]'),
-            submitBtnText = submitBtn.text();
+            submitBtnText = $submitBtn.text();
 
 
         $.ajax({
