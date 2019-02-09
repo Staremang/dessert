@@ -55,6 +55,8 @@ function initPopup() {
             $popup.fadeIn();
         }
 
+        $('body').css('overflow', 'hidden');
+
         $('.popup__content').hide();
         $(id).show();
 
@@ -63,6 +65,7 @@ function initPopup() {
 
     function popupClose() {
         $popup.fadeOut();
+        $('body').css('overflow', '');
         opened = false;
     }
 
